@@ -1,0 +1,32 @@
+<odoo>
+
+    <!-- This is the tree view for the purchase line -->
+    <record id="order_history_tree" model="ir.ui.view">
+        <field name="name">tree</field>
+        <field name="model">sale.order.history</field>
+        <field name="arch" type="xml">
+            <tree delete="0">
+
+                <field name="product_id"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="product_qty"/>
+                <field name="unit_price"/>
+                <field name="price_subtotal"/>
+                <button name="add_singe_line" type="object" icon="fa-shopping-cart" help="Add this to teh Order line"/>
+                <button name="delete_singe_line" type="object" icon="fa-book"/>
+                <!--                <field name="added_history_o"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="order_history_action" model="ir.actions.act_window">
+        <field name="name">sale order hist</field>
+        <field name="res_model">sale.order.history</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+</odoo>
+
+

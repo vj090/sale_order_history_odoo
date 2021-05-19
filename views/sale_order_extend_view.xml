@@ -1,0 +1,24 @@
+<odoo>
+    <!--This is inheriting and add a new field in the tree view of in crm after create date field-->
+    <record id="sale_order_inherit_and_add_field" model='ir.ui.view'>
+        <field name="name">sale.order.ext</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header//button[@name='action_cancel']" position="after" >
+                <field name="bool_field" invisible="1"/>
+                <button name="add_all_history" type="object" string="Add All History" class="oe_highlight" attrs="{'invisible': [('bool_field', '=', True)]}"/>
+                <button name="test_config" type="object" string="ir.Config" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//notebook//page[@name='order_lines']" position="after">
+                <page string="Order History" name="order_history">
+<!--                    <field name="all_order_hist_lien"/>-->
+<!--                    <field name="order_hist_o"/>-->
+<!--                    <field name="order_line"/>-->
+                    <field name="added_history_o"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

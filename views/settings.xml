@@ -1,0 +1,59 @@
+<odoo>
+    <!--This is inheriting and add a new field in the tree view of in crm after create date field-->
+    <record id="settingss_inherit_and_add_field" model='ir.ui.view'>
+        <field name="name">sale.order.ext</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='purchase_setting_container']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="counting_in"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="group_warning_purchase" string="NO. OF RECORD"/>
+                        <div class="text-muted">
+                            This is the field to limit the count of sale order
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
+
+        <!-- ????????????????????????????????????????????????????-->
+
+
+        <!--                        <div class="col-12 col-lg-6 o_setting_box">-->
+        <!--                            <div class="o_setting_left_pane">-->
+        <!--                                <field name="group_warning_purchase"/>-->
+        <!--                            </div>-->
+        <!--                            <div class="o_setting_right_pane">-->
+        <!--                                <label for="group_warning_purchase" string="Warnings"/>-->
+        <!--                                <div class="text-muted">-->
+        <!--                                    Get warnings in orders for products or vendors-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+
+
+        <!--<odoo>-->
+        <!--    &lt;!&ndash;This is inheriting and add a new field in the tree view of in crm after create date field&ndash;&gt;-->
+        <!--    <record id="settingss_inherit_and_add_field" model='ir.ui.view'>-->
+        <!--        <field name="name">sale.order.ext</field>-->
+        <!--        <field name="model">res.config.settings</field>-->
+        <!--        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>-->
+        <!--        <field name="arch" type="xml">-->
+        <!--            <xpath expr="//field[@name='module_purchase_requisition']" position="before">-->
+        <!--                <div class="o_setting_left_pane">-->
+        <!--                    <field name="counting_in"/>-->
+        <!--                </div>-->
+        <!--            </xpath>-->
+
+        <!--        </field>-->
+        <!--    </record>-->
+
+        <!--</odoo>-->
